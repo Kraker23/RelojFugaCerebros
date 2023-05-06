@@ -1,0 +1,207 @@
+<html>  
+<head>
+    
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="jquery.min.js"></script>
+    <script src="divFlip.js"></script>
+    <script>        
+        $(function(){
+            var countdownDate = new Date(2024,03,1,9,00);
+			//// solicitar un día de la semana junto con una fecha larga
+			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            $("#countDownDate").html(countdownDate.toLocaleDateString('es-ES',options));
+
+            var dFlip = new DivFlip();
+            dFlip.divs.top = $("#d_top");
+            dFlip.divs.bot = $("#d_bot");
+            dFlip.divs.topA = $("#d_topA");
+            dFlip.divs.botA = $("#d_botA");
+
+            var hFlip = new DivFlip();
+            hFlip.divs.top = $("#top");
+            hFlip.divs.bot = $("#bot");
+            hFlip.divs.topA = $("#topA");
+            hFlip.divs.botA = $("#botA");
+
+            var mFlip = new DivFlip();
+            mFlip.divs.top = $("#m_top");
+            mFlip.divs.bot = $("#m_bot");
+            mFlip.divs.topA = $("#m_topA");
+            mFlip.divs.botA = $("#m_botA");
+
+            var sFlip = new DivFlip();
+            sFlip.divs.top = $("#s_top");
+            sFlip.divs.bot = $("#s_bot");
+            sFlip.divs.topA = $("#s_topA");
+            sFlip.divs.botA = $("#s_botA");
+
+            dFlip.update("00");
+            hFlip.update("00");
+            mFlip.update("00");
+            sFlip.update("00");
+
+            var x = 0;
+            var h = 0;
+            var m = 0;
+            var s = 0;
+            var myVar = setInterval(myTimer, 1000);
+
+            function myTimer() {            
+                var d = new Date().getDifference(countdownDate);
+                if(x != d.days) { x =d.days; dFlip.update(x);  }
+                if(h != d.hours) { h =d.hours; hFlip.update(h);  }
+                if(m != d.minutes) { m = d.minutes; mFlip.update(m);}
+                if(s != d.seconds) { s = d.seconds; sFlip.update(s); }
+            }    
+        });
+
+        $(function(){
+            var countdownDate = new Date(2024,00,1,9,00);
+			//// solicitar un día de la semana junto con una fecha larga
+			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            $("#countDownDateM").html(countdownDate.toLocaleDateString('es-ES',options));
+
+            var dFlip = new DivFlip();
+            dFlip.divs.top = $("#d_topM");
+            dFlip.divs.bot = $("#d_botM");
+            dFlip.divs.topA = $("#d_topAM");
+            dFlip.divs.botA = $("#d_botAM");
+
+            var hFlip = new DivFlip();
+            hFlip.divs.top = $("#topM");
+            hFlip.divs.bot = $("#botM");
+            hFlip.divs.topA = $("#topAM");
+            hFlip.divs.botA = $("#botAM");
+
+            var mFlip = new DivFlip();
+            mFlip.divs.top = $("#m_topM");
+            mFlip.divs.bot = $("#m_botM");
+            mFlip.divs.topA = $("#m_topAM");
+            mFlip.divs.botA = $("#m_botAM");
+
+            var sFlip = new DivFlip();
+            sFlip.divs.top = $("#s_topM");
+            sFlip.divs.bot = $("#s_botM");
+            sFlip.divs.topA = $("#s_topAM");
+            sFlip.divs.botA = $("#s_botAM");
+
+            dFlip.update("00");
+            hFlip.update("00");
+            mFlip.update("00");
+            sFlip.update("00");
+
+            var x = 0;
+            var h = 0;
+            var m = 0;
+            var s = 0;
+  
+            var myVar = setInterval(myTimer, 1000);
+            function myTimer() {
+                var d = new Date().getDifference(countdownDate);
+                if(x != d.days) { x =d.days; dFlip.update(x);  }
+                if(h != d.hours) { h =d.hours; hFlip.update(h);  }
+                if(m != d.minutes) { m = d.minutes; mFlip.update(m);}
+                if(s != d.seconds) { s = d.seconds; sFlip.update(s); }
+            }
+        });
+        
+    </script>
+       
+<script>
+    
+</script>
+</head>
+<body>
+    
+    <span id="test"></span> 
+<div id="reloj" class="reloj scaled Xavi">
+    <div class="countDownDateDiv">La Cuenta atras Para Xavi: 
+            <span id="countDownDate"></span> 
+    </div>
+
+    <div class="item">
+        <div class="label">Dias</div>
+        <div class="caja">
+            <div id="d_top" class="top">00</div>
+            <div id="d_topA" class="topAux" style="visibility: hidden;">00</div>
+            <div id="d_bot" class="bot">00</div>
+            <div id="d_botA" class="botAux" style="visibility: hidden;">00</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Horas</div>
+        <div class="caja">
+            <div id="top" class="top">11</div>
+            <div id="topA" class="topAux" style="visibility: hidden;">22</div>
+            <div id="bot" class="bot">11</div>
+            <div id="botA" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="label">Minutos</div>
+        <div class="caja">
+            <div id="m_top" class="top">11</div>
+            <div id="m_topA" class="topAux" style="visibility: hidden;">22</div>
+            <div id="m_bot" class="bot">11</div>
+            <div id="m_botA" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Segundos</div>
+        <div class="caja">
+            <div id="s_top" class="top">11</div>
+            <div id="s_topA" class="topAux" style="visibility: hidden;">22</div>
+            <div id="s_bot" class="bot">11</div>
+            <div id="s_botA" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+</div>
+
+<div id="reloj" class="reloj scaled Marc">
+    <div class="countDownDateDiv">La Cuenta atras Para Marc: 
+            <span id="countDownDateM"></span> 
+    </div>
+
+    <div class="item">
+        <div class="label">Dias</div>
+        <div class="caja">
+            <div id="d_topM" class="top">00</div>
+            <div id="d_topAM" class="topAux" style="visibility: hidden;">00</div>
+            <div id="d_botM" class="bot">00</div>
+            <div id="d_botAM" class="botAux" style="visibility: hidden;">00</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Horas</div>
+        <div class="caja">
+            <div id="topM" class="top">11</div>
+            <div id="topAM" class="topAux" style="visibility: hidden;">22</div>
+            <div id="botM" class="bot">11</div>
+            <div id="botAM" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="label">Minutos</div>
+        <div class="caja">
+            <div id="m_topM" class="top">11</div>
+            <div id="m_topAM" class="topAux" style="visibility: hidden;">22</div>
+            <div id="m_botM" class="bot">11</div>
+            <div id="m_botAM" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Segundos</div>
+        <div class="caja">
+            <div id="s_topM" class="top">11</div>
+            <div id="s_topAM" class="topAux" style="visibility: hidden;">22</div>
+            <div id="s_botM" class="bot">11</div>
+            <div id="s_botAM" class="botAux" style="visibility: hidden;">22</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

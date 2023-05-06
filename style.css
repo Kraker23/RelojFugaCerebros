@@ -1,0 +1,76 @@
+body{background-color: rgb(46, 46, 46); margin: 0; padding: 10px;}
+.reloj{
+    background: grey; color: black;
+    border: black 1px solid;
+    border-radius: 10px;
+    width: 90px;
+    height: 35px;
+    padding: 5px;
+    
+}
+
+.Xavi {
+    background: green; color: black;
+}
+.Marc {
+    background: blue; color: white;
+    position: absolute;
+    top:250px;
+}
+
+.caja {
+    position: relative;
+    overflow: hidden;
+    width: 20px;
+    height: 15px;
+    font-size: 85%; 
+    /* font-size: 1rem;*/
+    float: left;
+    padding: 0;
+    /*border:solid 1px red;*/
+    border-radius: 2px;
+    text-align: center;
+    
+}
+.caja div{
+    position: absolute;
+    top:0;
+    overflow: hidden;
+    width: 20px;
+    background-color: rgb(26, 26, 26);
+    color:grey;
+}
+.caja .top, .caja .topAux {
+    height: 10px;
+    transform-origin: bottom;
+}
+.caja .bot /*, .caja .botAux*/ {
+    height: 20px;
+}
+.caja .top { z-index: 30;}
+.caja .bot { z-index: 20;}
+.caja .topAux { 
+    z-index: 40;
+    transform-origin: bottom;
+}
+.caja .botAux { 
+    z-index: 25;
+    transform-origin: center;
+}
+
+.countDownDateDiv {
+    position: relative;
+    font-size:7px;
+    margin: 0;
+    padding: 0;
+    top:-2px;
+}
+
+.item { position: relative; width: 20px; float: left; margin:0 0 0 2;}
+.item .label { position: relative; font-size: 4px; width: 10px; padding-left: 2px; }
+
+
+.scaled {
+    transform: scale(5); /* Igual que: scaleX(0.7) scaleY(0.7) */
+    transform-origin: top left;
+}
