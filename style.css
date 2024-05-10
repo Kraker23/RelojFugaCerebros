@@ -15,7 +15,7 @@ body{background-color: rgb(46, 46, 46); margin: 0; padding: 10px;}
 .Marc {
     background: blue; color: white;
     position: absolute;
-    top:250px;
+    /*top:250px;*/
 }
 
 .caja {

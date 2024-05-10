@@ -1,15 +1,16 @@
-<html>  
-<head>    
+<html>
+
+<head>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
     <script src="jquery.min.js"></script>
     <script src="divFlip.js"></script>
-    <script>        
-        $(function(){
-            var countdownDate = new Date(2024,03,1,9,00);
-			//// solicitar un día de la semana junto con una fecha larga
-			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            $("#countDownDate").html(countdownDate.toLocaleDateString('es-ES',options));
+    <script>
+        $(function () {
+            var countdownDate = new Date(2024,03, 1, 9,00);//XAVI
+            //// solicitar un día de la semana junto con una fecha larga
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            $("#countDownDate").html(countdownDate.toLocaleDateString('es-ES', options));
 
             var dFlip = new DivFlip();
             dFlip.divs.top = $("#d_top");
@@ -46,20 +47,20 @@
             var s = 0;
             var myVar = setInterval(myTimer, 1000);
 
-            function myTimer() {            
+            function myTimer() {
                 var d = new Date().getDifference(countdownDate);
-                if(x != d.days) { x =d.days; dFlip.update(x);  }
-                if(h != d.hours) { h =d.hours; hFlip.update(h);  }
-                if(m != d.minutes) { m = d.minutes; mFlip.update(m);}
-                if(s != d.seconds) { s = d.seconds; sFlip.update(s); }
-            }    
+                if (x != d.days) { x = d.days; dFlip.update(x); }
+                if (h != d.hours) { h = d.hours; hFlip.update(h); }
+                if (m != d.minutes) { m = d.minutes; mFlip.update(m); }
+                if (s != d.seconds) { s = d.seconds; sFlip.update(s); }
+            }
         });
 
-        $(function(){
-            var countdownDate = new Date(2024,00,1,9,00);
-			//// solicitar un día de la semana junto con una fecha larga
-			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            $("#countDownDateM").html(countdownDate.toLocaleDateString('es-ES',options));
+        $(function () {
+            var countdownDate = new Date(2024,04, 15, 13,00);//MARC
+            //// solicitar un día de la semana junto con una fecha larga
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            $("#countDownDateM").html(countdownDate.toLocaleDateString('es-ES', options));
 
             var dFlip = new DivFlip();
             dFlip.divs.top = $("#d_topM");
@@ -94,26 +95,28 @@
             var h = 0;
             var m = 0;
             var s = 0;
-  
+
             var myVar = setInterval(myTimer, 1000);
             function myTimer() {
                 var d = new Date().getDifference(countdownDate);
-                if(x != d.days) { x =d.days; dFlip.update(x);  }
-                if(h != d.hours) { h =d.hours; hFlip.update(h);  }
-                if(m != d.minutes) { m = d.minutes; mFlip.update(m);}
-                if(s != d.seconds) { s = d.seconds; sFlip.update(s); }
+                if (x != d.days) { x = d.days; dFlip.update(x); }
+                if (h != d.hours) { h = d.hours; hFlip.update(h); }
+                if (m != d.minutes) { m = d.minutes; mFlip.update(m); }
+                if (s != d.seconds) { s = d.seconds; sFlip.update(s); }
             }
         });
-        
+
     </script>
-       
-<script>
-    
-</script>
+
+    <script>
+
+    </script>
 </head>
+
 <body>
-    
-    <span id="test"></span> 
+
+    <span id="test"></span>
+    <!--
 <div id="reloj" class="reloj scaled Xavi">
     <div class="countDownDateDiv">La Cuenta atras Para Xavi: 
             <span id="countDownDate"></span> 
@@ -157,51 +160,50 @@
         </div>
     </div>
 </div>
+-->
+           <div id="reloj" class="reloj scaled Marc">
+                <div class="countDownDateDiv">La Cuenta atras Para Marc:
+                    <span id="countDownDateM"></span>
+                </div>
+                <div class="item">
+                    <div class="label">Dias</div>
+                    <div class="caja">
+                        <div id="d_topM" class="top">00</div>
+                        <div id="d_topAM" class="topAux" style="visibility: hidden;">00</div>
+                        <div id="d_botM" class="bot">00</div>
+                        <div id="d_botAM" class="botAux" style="visibility: hidden;">00</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="label">Horas</div>
+                    <div class="caja">
+                        <div id="topM" class="top">11</div>
+                        <div id="topAM" class="topAux" style="visibility: hidden;">22</div>
+                        <div id="botM" class="bot">11</div>
+                        <div id="botAM" class="botAux" style="visibility: hidden;">22</div>
+                    </div>
+                </div>
 
-<div id="reloj" class="reloj scaled Marc">
-    <div class="countDownDateDiv">La Cuenta atras Para Marc: 
-            <span id="countDownDateM"></span> 
-    </div>
-
-    <div class="item">
-        <div class="label">Dias</div>
-        <div class="caja">
-            <div id="d_topM" class="top">00</div>
-            <div id="d_topAM" class="topAux" style="visibility: hidden;">00</div>
-            <div id="d_botM" class="bot">00</div>
-            <div id="d_botAM" class="botAux" style="visibility: hidden;">00</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="label">Horas</div>
-        <div class="caja">
-            <div id="topM" class="top">11</div>
-            <div id="topAM" class="topAux" style="visibility: hidden;">22</div>
-            <div id="botM" class="bot">11</div>
-            <div id="botAM" class="botAux" style="visibility: hidden;">22</div>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="label">Minutos</div>
-        <div class="caja">
-            <div id="m_topM" class="top">11</div>
-            <div id="m_topAM" class="topAux" style="visibility: hidden;">22</div>
-            <div id="m_botM" class="bot">11</div>
-            <div id="m_botAM" class="botAux" style="visibility: hidden;">22</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="label">Segundos</div>
-        <div class="caja">
-            <div id="s_topM" class="top">11</div>
-            <div id="s_topAM" class="topAux" style="visibility: hidden;">22</div>
-            <div id="s_botM" class="bot">11</div>
-            <div id="s_botAM" class="botAux" style="visibility: hidden;">22</div>
-        </div>
-    </div>
-</div>
-
-
+                <div class="item">
+                    <div class="label">Minutos</div>
+                    <div class="caja">
+                        <div id="m_topM" class="top">11</div>
+                        <div id="m_topAM" class="topAux" style="visibility: hidden;">22</div>
+                        <div id="m_botM" class="bot">11</div>
+                        <div id="m_botAM" class="botAux" style="visibility: hidden;">22</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="label">Segundos</div>
+                    <div class="caja">
+                        <div id="s_topM" class="top">11</div>
+                        <div id="s_topAM" class="topAux" style="visibility: hidden;">22</div>
+                        <div id="s_botM" class="bot">11</div>
+                        <div id="s_botAM" class="botAux" style="visibility: hidden;">22</div>
+                    </div>
+                </div>
+            </div>
+            <img src="onepiece-removebg-preview.png" style="left:550px;position: absolute;" />
 </body>
+
 </html>
