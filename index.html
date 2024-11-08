@@ -59,7 +59,9 @@
         $(function () {
             var countdownDate = new Date(2024,10, 27, 17,00);//MARC
             //// solicitar un día de la semana junto con una fecha larga
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            //var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var options = { year: 'numeric', month: 'long', day: 'numeric' };
+            //$("#countDownDateM").html(countdownDate.toDateString('es-ES', options));//fechaCorta
             $("#countDownDateM").html(countdownDate.toLocaleDateString('es-ES', options));
 
             var dFlip = new DivFlip();
